@@ -3,7 +3,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import Home from '../Pages/Home'
 import Tarefas from '../Pages/Tarefas'
-import Entrada from '../Pages/Entrada';
+import Entrada from '../Pages/Entrada'
+import VerTarefa from '../Pages/VerTarefa'
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,16 @@ export default function Routes() {
       <Stack.Screen
         name="Home"
         component={Home}
+        options={{
+            headerShown: false,
+            tabBarIcon: ({ color, size }) => (
+              <MaterialCommunityIcons name="home" color={color} size={size} />
+            ),
+          }}
+      />
+      <Stack.Screen
+        name="VerTarefa"
+        component={VerTarefa}
         options={{
             headerShown: false,
             tabBarIcon: ({ color, size }) => (
